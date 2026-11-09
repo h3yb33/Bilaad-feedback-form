@@ -25,7 +25,8 @@
     }});
 
 
-    form.addEventListener("input", () => {
+    
+form.addEventListener("input", () => {
         formStatus.textContent = "";
     });
 
