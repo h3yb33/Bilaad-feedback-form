@@ -6,6 +6,25 @@
     const formStatus = document.querySelector("#form-status");
 
 
+    // Initialize Supabase client
+    const db = supabase.createClient("https://ckghzgvllutzhkbnwrfs.supabase.co", "sb_publishable_tlCwTgc5dQVYW2FMA6yqmA_iF7EE_t2");
+
+    form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    const { error } = await db.from("feedback_form").insert({
+        name: data.get("name"),
+        email: data.get("email"),
+        message: data.get("message"),
+    });
+
+    if (error) {
+        console.error(error);
+        alert("Something went wrong. Please try again.");
+    }});
+
+
     form.addEventListener("input", () => {
         formStatus.textContent = "";
     });
