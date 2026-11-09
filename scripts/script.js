@@ -1,7 +1,6 @@
     const form = document.querySelector("#feedback-form");
     const message = document.querySelector("#message");
     const characterCount = document.querySelector("#character-count");
-    const ratingFeedback = document.querySelector("#rating-feedback");
     const formContent = document.querySelector("#form-content");
     const successPanel = document.querySelector("#success-panel");
     const formStatus = document.querySelector("#form-status");
@@ -10,7 +9,7 @@
     form.addEventListener("input", () => {
         formStatus.textContent = "";
     });
-    
+
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.reportValidity()) {
